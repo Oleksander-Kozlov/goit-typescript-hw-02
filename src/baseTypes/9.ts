@@ -2,7 +2,20 @@
   Створіть новий тип даних, який підходить для цих двох об'єктів.
 */
 
-const page1 = {
+
+type createDetails = {details:{ createAt: Date; updateAt: Date }} ;  
+type basicDataPage = {
+  title: string;
+  likes: number;
+  accounts: string[];
+  status: string;
+ 
+};
+
+type fullDataPage = basicDataPage |createDetails;
+
+
+const page1:fullDataPage = {
   title: 'The awesome page',
   likes: 100,
   accounts: ['Max', 'Anton', 'Nikita'],
@@ -13,11 +26,11 @@ const page1 = {
   }
 }
 
-const page2 = {
-  title: 'Python or Js',
+const page2: fullDataPage = {
+  title: "Python or Js",
   likes: 5,
-  accounts: ['Alex'],
-  status: 'close',
-}
+  accounts: ["Alex"],
+  status: "close",
+};
 
 export {};
